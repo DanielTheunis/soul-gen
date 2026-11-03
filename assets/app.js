@@ -108,8 +108,8 @@
   });
 
   /* ---------- heartbeat glow: lub-dub, random size each beat ---------- */
-  var glow = document.querySelector('.hero__glow');
-  if (glow && !reduced && glow.animate) {
+  var glows = document.querySelectorAll('.hero__glow');
+  if (glows.length && !reduced && glows[0].animate) {
     var heroVisible = true, beating = false;
 
     function beat() {
@@ -118,14 +118,17 @@
       var big = 1.08 + Math.random() * 0.42;                       // 1.08–1.50: soft to huge
       var second = 1 + (big - 1) * (0.55 + Math.random() * 0.3);   // the "dub" is a bit smaller
       var peak = Math.min(1, 0.8 + (big - 1) * 0.6);
-      glow.animate([
+      var frames = [
         { transform: 'scale(1)',              opacity: 0.6,         offset: 0 },
         { transform: 'scale(' + big + ')',    opacity: peak,        offset: 0.14 }, // lub
         { transform: 'scale(1.02)',           opacity: 0.7,         offset: 0.30 },
         { transform: 'scale(' + second + ')', opacity: peak * 0.9,  offset: 0.44 }, // dub
         { transform: 'scale(1)',              opacity: 0.6,         offset: 1 }
-      ], { duration: 1100, easing: 'cubic-bezier(.23,1,.32,1)' })
-        .onfinish = function () { setTimeout(beat, 250 + Math.random() * 900); }; // random rest
+      ];
+      var anims = Array.prototype.map.call(glows, function (g) {      // both halves beat together
+        return g.animate(frames, { duration: 1100, easing: 'cubic-bezier(.23,1,.32,1)' });
+      });
+      anims[0].onfinish = function () { setTimeout(beat, 250 + Math.random() * 900); }; // random rest
     }
     function resume() { if (!beating) beat(); }
 

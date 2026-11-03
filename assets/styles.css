@@ -178,7 +178,7 @@ ul,ol{margin:0; padding:0; list-style:none}
   background:linear-gradient(90deg, var(--white) 0 50%, var(--black) 50% 100%);
 }
 /* galactic glow sits above the blended logo so it never inverts */
-.hero__glow,.outro::after{
+.outro::after{
   content:''; position:absolute; inset:0; z-index:2; pointer-events:none;
   background:
     radial-gradient(60vmin 50vmin at 72% 55%, rgba(123,92,255,.48), transparent 70%),
@@ -186,8 +186,23 @@ ul,ol{margin:0; padding:0; list-style:none}
     radial-gradient(80vmin 30vmin at 50% 100%, rgba(123,92,255,.22), transparent 70%);
   mix-blend-mode:screen;
 }
-/* the galactic glow beats like a heart — JS picks a random strength per beat */
-.hero__glow{transform-origin:65% 55%; opacity:.6; will-change:transform, opacity}
+/* heartbeat glow, centred on the logo across BOTH halves:
+   'screen' lights up the onyx side, 'multiply' tints the marshmallow side —
+   each leaves the logo letters on the other side untouched */
+.hero__glow{position:absolute; inset:0; z-index:2; pointer-events:none}
+.hero__glow--dark{
+  background:
+    radial-gradient(62vmin 52vmin at 50% 48%, rgba(123,92,255,.55), transparent 70%),
+    radial-gradient(90vmin 30vmin at 50% 100%, rgba(123,92,255,.22), transparent 70%);
+  mix-blend-mode:screen;
+}
+.hero__glow--light{
+  background:
+    radial-gradient(62vmin 52vmin at 50% 48%, rgba(150,120,255,.42), transparent 70%),
+    radial-gradient(90vmin 30vmin at 50% 100%, rgba(150,120,255,.18), transparent 70%);
+  mix-blend-mode:multiply;
+}
+.hero__glow{transform-origin:50% 48%; opacity:.6; will-change:transform, opacity}
 .hero__blend{
   position:relative; z-index:1;
   mix-blend-mode:difference;
