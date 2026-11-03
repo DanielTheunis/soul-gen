@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOULGEN — Website Design &amp; Marketing Agency</title>
+<meta name="description" content="SoulGen is a website building and marketing agency. Custom websites, brand identity, paid ads, SEO and social — built black and white, executed at maximum volume.">
+<meta name="theme-color" content="#0E0E11">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Archivo:wght@100..900&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ============ TEXTURE LAYERS ============ -->
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="scroll-bar" aria-hidden="true"><span></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="SoulGen home">
+    <svg class="nav__mark" viewBox="0 0 400 400" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="18">
+        <circle cx="200" cy="200" r="170"/><path d="M200 30 V370"/>
+      </g>
+      <g fill="currentColor">
+        <path transform="translate(85 150)" d="M24,0 L110,0 L86,24 L24,24 L24,38 L110,38 L110,100 L24,100 L0,76 L86,76 L86,62 L0,62 L0,24 Z"/>
+        <path transform="translate(205 150)" d="M24,0 L110,0 L86,24 L24,24 L24,76 L86,76 L86,68 L46,68 L70,44 L110,44 L110,100 L24,100 L0,76 L0,24 Z"/>
+      </g>
+    </svg>
+    <span class="nav__word">SOULGEN</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="nav__cta magnetic" href="tel:+27761864696">
+    <span class="nav__dot"></span>076 186 4696
+  </a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#process">Process</a>
+  <a href="#work">Work</a>
+  <a href="#contact">Contact</a>
+  <a class="drawer__tel" href="tel:+27761864696">076 186 4696</a>
+  <a class="drawer__tel drawer__mail" href="mailto:info@soulgen.com">info@soulgen.com</a>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO — THE LOGO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__split" aria-hidden="true"></div>
+
+  <div class="hero__blend">
+    <div class="hero__rings" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="lockup">
+      <svg class="lockup__mark" viewBox="0 0 400 400" role="img" aria-label="SoulGen monogram">
+        <g fill="none" stroke="#fff" stroke-width="17">
+          <circle cx="200" cy="200" r="170"/>
+          <path d="M200 30 V370"/>
+        </g>
+        <g fill="#fff">
+          <path transform="translate(85 150)" d="M24,0 L110,0 L86,24 L24,24 L24,38 L110,38 L110,100 L24,100 L0,76 L86,76 L86,62 L0,62 L0,24 Z"/>
+          <path transform="translate(205 150)" d="M24,0 L110,0 L86,24 L24,24 L24,76 L86,76 L86,68 L46,68 L70,44 L110,44 L110,100 L24,100 L0,76 L0,24 Z"/>
+        </g>
+      </svg>
+
+      <svg class="lockup__word" viewBox="0 0 1000 176" role="img" aria-label="SOULGEN">
+        <text x="500" y="143" text-anchor="middle" textLength="985" lengthAdjust="spacing"
+              font-family="Orbitron, 'Arial Black', sans-serif" font-weight="900" font-size="166" fill="#fff">SOULGEN</text>
+      </svg>
+    </div>
+
+    <p class="hero__tag">Website building &nbsp;·&nbsp; Marketing that moves</p>
+
+    <div class="hero__cta">
+      <a class="btn btn--ghost magnetic" href="#contact">Start a project</a>
+      <a class="btn btn--ghost magnetic" href="#work">See the work</a>
+    </div>
+  </div>
+
+  <div class="hero__cue" aria-hidden="true">
+    <svg class="spin" viewBox="0 0 200 200">
+      <defs><path id="circ" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+      <text font-size="15" letter-spacing="7" fill="currentColor" font-family="Inter, sans-serif" font-weight="500">
+        <textPath href="#circ">SCROLL · BUILT IN BLACK &amp; WHITE · SCROLL · BUILT IN BLACK &amp; WHITE ·</textPath>
+      </text>
+    </svg>
+    <span class="hero__arrow">↓</span>
+  </div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<section class="ticker" aria-hidden="true">
+  <div class="ticker__row" data-marquee>
+    <span>WEBSITES<b>◆</b>BRANDING<b>◆</b>PAID ADS<b>◆</b>SEO<b>◆</b>SOCIAL<b>◆</b>E-COMMERCE<b>◆</b>STRATEGY<b>◆</b></span>
+  </div>
+  <div class="ticker__row ticker__row--alt" data-marquee data-reverse>
+    <span>NO TEMPLATES<b>◆</b>NO FLUFF<b>◆</b>NO EXCUSES<b>◆</b>NO TEMPLATES<b>◆</b>NO FLUFF<b>◆</b>NO EXCUSES<b>◆</b></span>
+  </div>
+</section>
+
+<!-- ============ INTRO / MANIFESTO ============ -->
+<section class="intro section" id="about">
+  <div class="orb orb--a orb--violet" aria-hidden="true"></div>
+  <div class="orb orb--b orb--violet" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>01 — Who we are</span>
+    <h2 class="display" data-reveal>
+      We build the <em>website</em>.<br>
+      Then we build the <em>demand</em>.
+    </h2>
+    <div class="intro__grid">
+      <p class="lede" data-reveal style="--d:.05s">
+        SoulGen is a website building and marketing agency. Two halves of one machine — one side makes
+        you look untouchable, the other makes sure the right people actually see it.
+      </p>
+      <p class="body" data-reveal style="--d:.12s">
+        Every site is designed from scratch, coded fast and built to convert. Every campaign is aimed,
+        measured and adjusted until the numbers move. No borrowed themes, no vanity metrics, no monthly
+        report full of words that mean nothing.
+      </p>
+    </div>
+    <div class="stats">
+      <div class="stat glass" data-reveal style="--d:.05s"><b data-count="100" data-suffix="%">0%</b><span>Custom built — zero templates</span></div>
+      <div class="stat glass" data-reveal style="--d:.12s"><b data-count="3" data-suffix=" wk">0</b><span>Average launch window</span></div>
+      <div class="stat glass" data-reveal style="--d:.19s"><b data-count="7" data-suffix="/7">0</b><span>Channels we run for clients</span></div>
+      <div class="stat glass" data-reveal style="--d:.26s"><b data-count="0" data-suffix="">0</b><span>Long-term lock-in contracts</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services section" id="services">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="orb orb--c orb--violet" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow" data-reveal>02 — What we do</span>
+      <h2 class="display" data-reveal>Everything<br>a brand needs<br><em>to be seen.</em></h2>
+    </div>
+
+    <div class="cards">
+      <article class="card glass" data-reveal style="--d:.04s" data-tilt>
+        <span class="card__num">01</span>
+        <h3>Website Design &amp; Build</h3>
+        <p>Custom-designed, hand-built sites that load fast, read clean and turn visitors into enquiries. Business sites, landing pages, full rebuilds.</p>
+        <ul><li>UX &amp; wireframing</li><li>Responsive front-end</li><li>Speed &amp; SEO foundations</li><li>Copy that converts</li></ul>
+      </article>
+
+      <article class="card glass" data-reveal style="--d:.10s" data-tilt>
+        <span class="card__num">02</span>
+        <h3>Brand Identity</h3>
+        <p>Logos, colour, type and the rules that hold it together — an identity that works on a business card and a billboard.</p>
+        <ul><li>Logo &amp; mark design</li><li>Visual systems</li><li>Brand guidelines</li><li>Print &amp; signage</li></ul>
+      </article>
+
+      <article class="card glass" data-reveal style="--d:.16s" data-tilt>
+        <span class="card__num">03</span>
+        <h3>Paid Advertising</h3>
+        <p>Meta, Google, TikTok. Built around your margins, not our ego. Creative, targeting, tracking and weekly optimisation.</p>
+        <ul><li>Meta &amp; Instagram Ads</li><li>Google Search &amp; PMax</li><li>TikTok &amp; short-form</li><li>Tracking &amp; reporting</li></ul>
+      </article>
+
+      <article class="card glass" data-reveal style="--d:.04s" data-tilt>
+        <span class="card__num">04</span>
+        <h3>SEO &amp; Content</h3>
+        <p>Get found for what you actually sell. Technical fixes, local search, and content that earns the click instead of begging for it.</p>
+        <ul><li>Technical SEO</li><li>Google Business Profile</li><li>Keyword strategy</li><li>Blog &amp; landing content</li></ul>
+      </article>
+
+      <article class="card glass" data-reveal style="--d:.10s" data-tilt>
+        <span class="card__num">05</span>
+        <h3>Social Media</h3>
+        <p>Content, calendars and community. Posts that look like they belong to a brand people trust — not a stock photo folder.</p>
+        <ul><li>Content creation</li><li>Monthly calendars</li><li>Reels &amp; short video</li><li>Community management</li></ul>
+      </article>
+
+      <article class="card glass" data-reveal style="--d:.16s" data-tilt>
+        <span class="card__num">06</span>
+        <h3>E-Commerce</h3>
+        <p>Stores built to sell — clean product pages, fast checkout, and the marketing plumbing wired in from day one.</p>
+        <ul><li>Store design &amp; build</li><li>Product &amp; checkout UX</li><li>Payment &amp; delivery setup</li><li>Retargeting &amp; email</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS (INVERTED) ============ -->
+<section class="process section section--light" id="process">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow" data-reveal>03 — How it runs</span>
+      <h2 class="display" data-reveal>Four moves.<br><em>No mystery.</em></h2>
+    </div>
+
+    <ol class="steps">
+      <li class="step glass glass--dark" data-reveal style="--d:.04s">
+        <span class="step__n">01</span>
+        <h3>Discover</h3>
+        <p>A proper conversation. What you sell, who buys it, what is blocking it. We come back with a plan and a fixed price — not a vague retainer.</p>
+      </li>
+      <li class="step glass glass--dark" data-reveal style="--d:.10s">
+        <span class="step__n">02</span>
+        <h3>Design</h3>
+        <p>Concepts you can actually see. Real layouts, real copy, real content — reviewed and refined before a single line of code is written.</p>
+      </li>
+      <li class="step glass glass--dark" data-reveal style="--d:.16s">
+        <span class="step__n">03</span>
+        <h3>Build</h3>
+        <p>Hand-coded, tested on every screen size, wired to analytics and search. Live in weeks, not quarters.</p>
+      </li>
+      <li class="step glass glass--dark" data-reveal style="--d:.22s">
+        <span class="step__n">04</span>
+        <h3>Grow</h3>
+        <p>Launch is the start. Ads, SEO and content run on top of it, with numbers you can read and decisions you can question.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="work section" id="work">
+  <div class="ghost-type" aria-hidden="true">SOULGEN</div>
+  <div class="orb orb--d orb--violet" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow" data-reveal>04 — Where we work</span>
+      <h2 class="display" data-reveal>Built for people<br>who <em>actually trade.</em></h2>
+    </div>
+
+    <div class="work__grid">
+      <article class="wcard glass" data-reveal style="--d:.05s">
+        <div class="wcard__top"><span>Trades &amp; Industrial</span><span class="wcard__arrow">→</span></div>
+        <h3>Welding, fabrication, construction, plant hire</h3>
+        <p>Heavy-duty brands need heavy-duty proof. Sites built around capability, safety and a phone number people can find in one second.</p>
+        <div class="chips"><i>Website</i><i>Branding</i><i>Google Ads</i></div>
+      </article>
+
+      <article class="wcard glass" data-reveal style="--d:.11s">
+        <div class="wcard__top"><span>Professional Services</span><span class="wcard__arrow">→</span></div>
+        <h3>Accounting, legal, consulting, financial</h3>
+        <p>Credibility first. Calm, precise sites that make a serious firm look as sharp online as it does in the boardroom.</p>
+        <div class="chips"><i>Website</i><i>SEO</i><i>LinkedIn</i></div>
+      </article>
+
+      <article class="wcard glass" data-reveal style="--d:.17s">
+        <div class="wcard__top"><span>Retail &amp; E-Commerce</span><span class="wcard__arrow">→</span></div>
+        <h3>Stores, studios, product brands</h3>
+        <p>Product pages that sell, checkouts that do not leak, and paid campaigns that pay for themselves — measured on revenue, not likes.</p>
+        <div class="chips"><i>Store build</i><i>Meta Ads</i><i>Email</i></div>
+      </article>
+
+      <article class="wcard glass" data-reveal style="--d:.23s">
+        <div class="wcard__top"><span>Hospitality &amp; Local</span><span class="wcard__arrow">→</span></div>
+        <h3>Restaurants, salons, gyms, clinics</h3>
+        <p>Local search, bookings and social. Get found on the map, look good on the phone, fill the diary.</p>
+        <div class="chips"><i>Website</i><i>Local SEO</i><i>Social</i></div>
+      </article>
+    </div>
+
+    <blockquote class="quote" data-reveal>
+      <p>&ldquo;Black and white thinking. <em>Maximum</em> output.&rdquo;</p>
+      <cite>— the whole strategy, honestly</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact section" id="contact">
+  <div class="orb orb--e orb--violet" aria-hidden="true"></div>
+  <div class="orb orb--f orb--violet" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section__head section__head--center">
+      <span class="eyebrow" data-reveal>05 — Start here</span>
+      <h2 class="display display--xl" data-reveal>Let us build<br><em>something loud.</em></h2>
+    </div>
+
+    <div class="contact__grid">
+      <aside class="contact__side" data-reveal>
+        <a class="phone glass magnetic" href="tel:+27761864696">
+          <span class="phone__label">Call us direct</span>
+          <span class="phone__num">076 186 4696</span>
+          <span class="phone__go">Tap to call →</span>
+        </a>
+
+        <a class="wa glass magnetic" href="https://wa.me/27761864696" target="_blank" rel="noopener">
+          <span>WhatsApp us</span><b>→</b>
+        </a>
+
+        <a class="wa mail glass magnetic" href="mailto:info@soulgen.com">
+          <span><small>Email us</small>info@soulgen.com</span><b>→</b>
+        </a>
+
+        <div class="hours glass">
+          <div><span>Mon — Fri</span><b>08:00 — 17:00</b></div>
+          <div><span>Saturday</span><b>By appointment</b></div>
+          <div><span>Reply time</span><b>Same working day</b></div>
+        </div>
+      </aside>
+
+      <form class="form glass" id="form" data-reveal style="--d:.1s" novalidate>
+        <div class="field">
+          <input type="text" id="name" name="name" placeholder=" " required>
+          <label for="name">Your name</label>
+        </div>
+        <div class="field">
+          <input type="tel" id="phone" name="phone" placeholder=" " required>
+          <label for="phone">Phone number</label>
+        </div>
+        <div class="field">
+          <input type="text" id="company" name="company" placeholder=" ">
+          <label for="company">Business name</label>
+        </div>
+        <div class="field field--select">
+          <select id="need" name="need">
+            <option>New website</option>
+            <option>Website redesign</option>
+            <option>Branding &amp; logo</option>
+            <option>Paid advertising</option>
+            <option>SEO</option>
+            <option>Social media</option>
+            <option>E-commerce store</option>
+            <option>Everything</option>
+          </select>
+          <label for="need">What do you need?</label>
+        </div>
+        <div class="field field--full">
+          <textarea id="msg" name="msg" rows="4" placeholder=" "></textarea>
+          <label for="msg">Tell us about the project</label>
+        </div>
+        <button type="submit" class="btn btn--solid magnetic">Send it through</button>
+        <p class="form__note" id="formNote">Opens WhatsApp with your details ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ END SPLIT ============ -->
+<section class="outro">
+  <div class="hero__split" aria-hidden="true"></div>
+  <div class="hero__blend outro__inner">
+    <svg class="lockup__word outro__word" viewBox="0 0 1000 176" role="img" aria-label="SOULGEN">
+      <text x="500" y="143" text-anchor="middle" textLength="985" lengthAdjust="spacing"
+            font-family="Orbitron, 'Arial Black', sans-serif" font-weight="900" font-size="166" fill="#fff">SOULGEN</text>
+    </svg>
+    <p class="outro__tag">076 186 4696 &nbsp;·&nbsp; info@soulgen.com</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>&copy; <span id="year">2026</span> SoulGen. All rights reserved.</span>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#contact">Contact</a>
+    </nav>
+    <span class="footer__contact"><a href="mailto:info@soulgen.com">info@soulgen.com</a><a href="tel:+27761864696">076 186 4696</a></span>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
