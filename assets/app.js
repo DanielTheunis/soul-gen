@@ -107,36 +107,34 @@
     });
   });
 
-  /* ---------- custom cursor ---------- */
-  var cursor = document.querySelector('.cursor');
-  if (cursor && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    var cx = 0, cy = 0, tx = 0, ty = 0, vx = 0, vy = 0, raf = null, last = 0;
+  /* ---------- heartbeat glow: lub-dub, random size each beat ---------- */
+  var glow = document.querySelector('.hero__glow');
+  if (glow && !reduced && glow.animate) {
+    var heroVisible = true, beating = false;
 
-    window.addEventListener('pointermove', function (e) {
-      tx = e.clientX; ty = e.clientY;
-      cursor.classList.add('is-on');
-      if (!raf) raf = requestAnimationFrame(loop);
-    });
-    document.documentElement.addEventListener('pointerleave', function () { cursor.classList.remove('is-on'); });
-    window.addEventListener('pointerdown', function () { cursor.classList.add('is-down'); });
-    window.addEventListener('pointerup', function () { cursor.classList.remove('is-down'); });
-
-    // critically damped spring (damping 1.0, response ~0.12s) — follows without overshoot
-    var K = Math.pow(2 * Math.PI / 0.12, 2), C = 2 * Math.sqrt(K);
-    function loop(now) {
-      var dt = Math.min((now - (last || now)) / 1000, 1 / 30) || 1 / 60; last = now;
-      vx += (K * (tx - cx) - C * vx) * dt; cx += vx * dt;
-      vy += (K * (ty - cy) - C * vy) * dt; cy += vy * dt;
-      cursor.style.left = cx + 'px';
-      cursor.style.top = cy + 'px';
-      var moving = Math.abs(tx - cx) > 0.2 || Math.abs(ty - cy) > 0.2 || Math.abs(vx) + Math.abs(vy) > 2;
-      raf = moving ? requestAnimationFrame(loop) : (last = 0, null);
+    function beat() {
+      if (!heroVisible || document.hidden) { beating = false; return; } // pause off-screen
+      beating = true;
+      var big = 1.08 + Math.random() * 0.42;                       // 1.08–1.50: soft to huge
+      var second = 1 + (big - 1) * (0.55 + Math.random() * 0.3);   // the "dub" is a bit smaller
+      var peak = Math.min(1, 0.8 + (big - 1) * 0.6);
+      glow.animate([
+        { transform: 'scale(1)',              opacity: 0.6,         offset: 0 },
+        { transform: 'scale(' + big + ')',    opacity: peak,        offset: 0.14 }, // lub
+        { transform: 'scale(1.02)',           opacity: 0.7,         offset: 0.30 },
+        { transform: 'scale(' + second + ')', opacity: peak * 0.9,  offset: 0.44 }, // dub
+        { transform: 'scale(1)',              opacity: 0.6,         offset: 1 }
+      ], { duration: 1100, easing: 'cubic-bezier(.23,1,.32,1)' })
+        .onfinish = function () { setTimeout(beat, 250 + Math.random() * 900); }; // random rest
     }
+    function resume() { if (!beating) beat(); }
 
-    document.querySelectorAll('a, button, .card, .wcard, .stat, .step').forEach(function (el) {
-      el.addEventListener('pointerenter', function () { cursor.classList.add('is-big'); });
-      el.addEventListener('pointerleave', function () { cursor.classList.remove('is-big'); });
-    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { heroVisible = es[0].isIntersecting; resume(); })
+        .observe(document.getElementById('hero'));
+    }
+    document.addEventListener('visibilitychange', resume);
+    resume();
   }
 
   /* ---------- tiny spring engine (Apple-style: damping ratio + response) ----------

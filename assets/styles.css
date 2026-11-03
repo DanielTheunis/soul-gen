@@ -72,16 +72,6 @@ ul,ol{margin:0; padding:0; list-style:none}
   80%{transform:translate(5%,2%)}
 }
 
-.cursor{
-  position:fixed; top:0; left:0; width:26px; height:26px; border-radius:50%;
-  background:var(--white); mix-blend-mode:difference; pointer-events:none; z-index:9999;
-  transform:translate(-50%,-50%) scale(.6); opacity:0;
-  transition:transform .3s var(--ease-out), opacity .2s ease, width .3s var(--ease-out), height .3s var(--ease-out);
-}
-.cursor.is-on{transform:translate(-50%,-50%) scale(1); opacity:1}
-.cursor.is-down{transform:translate(-50%,-50%) scale(.82)}
-.cursor.is-big{width:82px; height:82px}
-
 .scroll-bar{position:fixed; top:0; left:0; right:0; height:2px; z-index:9997; pointer-events:none}
 .scroll-bar span{display:block; height:100%; width:100%; transform-origin:0 50%; transform:scaleX(0); background:linear-gradient(90deg,var(--violet),var(--violet-hi)); box-shadow:0 0 12px var(--violet-glow)}
 
@@ -188,7 +178,7 @@ ul,ol{margin:0; padding:0; list-style:none}
   background:linear-gradient(90deg, var(--white) 0 50%, var(--black) 50% 100%);
 }
 /* galactic glow sits above the blended logo so it never inverts */
-.hero::after,.outro::after{
+.hero__glow,.outro::after{
   content:''; position:absolute; inset:0; z-index:2; pointer-events:none;
   background:
     radial-gradient(60vmin 50vmin at 72% 55%, rgba(123,92,255,.48), transparent 70%),
@@ -196,12 +186,8 @@ ul,ol{margin:0; padding:0; list-style:none}
     radial-gradient(80vmin 30vmin at 50% 100%, rgba(123,92,255,.22), transparent 70%);
   mix-blend-mode:screen;
 }
-/* the galactic glow breathes slowly behind the logo */
-.hero::after{animation:glow-pulse 4.5s var(--ease-in-out) infinite alternate; transform-origin:70% 55%}
-@keyframes glow-pulse{
-  from{opacity:.55; transform:scale(.94)}
-  to{opacity:1; transform:scale(1.06)}
-}
+/* the galactic glow beats like a heart — JS picks a random strength per beat */
+.hero__glow{transform-origin:65% 55%; opacity:.6; will-change:transform, opacity}
 .hero__blend{
   position:relative; z-index:1;
   mix-blend-mode:difference;
@@ -668,7 +654,6 @@ section[id]{scroll-margin-top:80px}
   .intro__grid{grid-template-columns:1fr}
   .work__grid{grid-template-columns:1fr}
   .hero__cue{display:none}
-  .cursor{display:none}
 }
 @media (max-width:620px){
   .cards{grid-template-columns:1fr}
