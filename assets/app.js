@@ -248,7 +248,7 @@
       }
 
       var lines = [
-        'New enquiry via soulgen.co.za',
+        'New enquiry via soul-gen.com',
         '',
         'Name: ' + name,
         'Phone: ' + phone,
